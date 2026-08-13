@@ -44,6 +44,9 @@ async def upload_video(file: UploadFile = File(...)):
         # =====================================================
         # 3. Whisper Transcription
         # =====================================================
+        import gc
+        gc.collect()  # Force garbage collection to free up RAM before transcription
+
         logger.info("Starting Whisper transcription...")
         transcript_path = transcribe_audio(audio_path)
         logger.info(f"Transcript generated successfully: {transcript_path}")

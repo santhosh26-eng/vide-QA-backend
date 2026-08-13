@@ -24,3 +24,4 @@ httpx
 
 tqdm
 watchfiles
+pyttsx3

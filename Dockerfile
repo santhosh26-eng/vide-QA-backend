@@ -1,11 +1,13 @@
 # Use an official Python runtime as a parent image
 FROM python:3.10-slim
 
-# Install system dependencies (specifically ffmpeg for video/audio processing)
+# Install system dependencies (specifically ffmpeg for video/audio processing and espeak for pyttsx3 text-to-speech)
 RUN apt-get update && apt-get install -y \
     ffmpeg \
     libsm6 \
     libxext6 \
+    espeak \
+    libespeak1 \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory

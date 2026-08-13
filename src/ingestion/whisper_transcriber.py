@@ -10,7 +10,8 @@ TRANSCRIPT_DIR.mkdir(exist_ok=True)
 model = WhisperModel(
     "tiny",
     device="cpu",
-    compute_type="int8"
+    compute_type="int8",
+    download_root="./models"
 )
 
 

@@ -23,7 +23,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Pre-download the Whisper model to avoid memory spikes and timeouts during runtime
-RUN python -c "from faster_whisper import WhisperModel; WhisperModel('tiny', device='cpu', compute_type='int8')"
+# We download it directly into /app/models so the runtime user (which isn't always root) can find it!
+RUN python -c "from faster_whisper import WhisperModel; WhisperModel('tiny', device='cpu', compute_type='int8', download_root='/app/models')"
 
 # Expose the port FastAPI will run on
 EXPOSE 8000

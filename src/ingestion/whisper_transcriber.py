@@ -8,7 +8,7 @@ TRANSCRIPT_DIR.mkdir(exist_ok=True)
 
 # Load Whisper model (loaded once when the module is imported)
 model = WhisperModel(
-    "base",
+    "tiny",
     device="cpu",
     compute_type="int8"
 )

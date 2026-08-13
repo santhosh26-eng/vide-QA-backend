@@ -7,7 +7,7 @@ pymongo
 motor
 
 litellm
-mistralai
+mistralai>=1.0.0
 google-generativeai
 
 faster-whisper
